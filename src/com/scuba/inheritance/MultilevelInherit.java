@@ -1,39 +1,44 @@
 package com.scuba.inheritance;
+class Car{
+	   public Car()
+	   {
+		System.out.println("Class Car");
+	   }
+	   public void vehicleType()
+	   {
+		System.out.println("Vehicle Type: Car");
+	   }
+	}
+	class Maruti extends Car{
+	   public Maruti()
+	   {
+		System.out.println("Class Maruti");
+	   }
+	   public void brand()
+	   {
+		System.out.println("Brand: Maruti");
+	   }
+	   public void speed()
+	   {
+		System.out.println("Max: 90Kmph");
+	   }
+	}
+	public class MultilevelInherit extends Maruti{
 
-class A
-{
-	int a = 10;
-	void disp()
-	{
-		System.out.println("Hi, This is Parent Class");
+	   public MultilevelInherit()
+	   {
+		System.out.println("Maruti Model: 800");
+	   }
+	   public void speed()
+	   {
+		System.out.println("Max: 80Kmph");
+	   }
+	   public static void main(String args[])
+	   {
+		   MultilevelInherit obj=new MultilevelInherit();
+		 obj.vehicleType();
+		 obj.brand();
+		 obj.speed();
+	   }
 	}
-}
-class B extends A
-{
-	int b = 20;
-	void start()
-	{
-		System.out.println("Hi, This is Child Class");
-	}
-}
-class C extends B
-{
-	int c = 30;
-	void run()
-	{
-		System.out.println("Hi, This is GrandChild Class");
-	}
-}
-public class MultilevelInherit
-{
-	public static void main(String[] args)
-	{
-		C obj = new C(); //The object of the class C is used to access the variables and methods of Class C,B,A 
-		System.out.println(obj.a);
-		obj.disp();
-		System.out.println(obj.b);
-		obj.start();
-		System.out.println(obj.c);
-		obj.run();
-	}
-}
+

@@ -1,43 +1,45 @@
 package com.scuba.inheritance;
 
-class Parent1
+class parent
 {
-	int a = 10;
-	void disp()
-	{
-		System.out.println("Hi, This is the parent of Hierachical");
-	}
+   public void methodA()
+   {
+      System.out.println("method of Class A");
+   }
 }
-class Child1 extends Parent1
+class child1 extends parent
 {
-	int b = 20;
-	void start()
-	{
-		System.out.println("Hi, This is the child of Parent1");
-	}
+   public void methodB()
+   {
+      System.out.println("method of Class B");
+   }
 }
-class Child2 extends Parent1
+class child2 extends parent
 {
-	int c = 30;
-	void run()
-	{
-		System.out.println("Hi, This is the another child of Parent1");
-	}
+  public void methodC()
+  {
+     System.out.println("method of Class C");
+  }
+}
+class child3 extends parent
+{
+  public void methodD()
+  {
+     System.out.println("method of Class D");
+  }
+}
+class HierarchicalInherit
+{
+  public static void main(String args[])
+  {
+	  child1 obj1 = new child1();
+	  child2 obj2 = new child2();
+	  child3 obj3 = new child3();
+     //All classes can access the method of class A
+     obj1.methodA();
+     obj1.methodB();
+     obj2.methodC();
+     obj3.methodD();
+  }
 }
 
-public class HierarchicalInherit 
-{
-	public static void main(String[] args)
-	{
-		Child1 obj1 = new Child1();
-		System.out.println(obj1.b);
-		obj1.start();
-		System.out.println(obj1.a);
-		obj1.disp();
-		Child2 obj2 = new Child2();
-		System.out.println(obj2.c);
-		obj2.run();
-		System.out.println(obj2.a);
-		obj2.disp();
-	}
-}
